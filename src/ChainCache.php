@@ -165,4 +165,19 @@ class ChainCache extends CacheProvider
         }
         return $flushed;
     }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected function doGetStats()
+    {
+        // We return all the stats from all adapters
+        $stats = array();
+
+        foreach ($this->cacheProviders as $cacheProvider) {
+            $stats[] = $cacheProvider->doGetStats();
+        }
+
+        return $stats;
+    }
 }

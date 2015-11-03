@@ -12,5 +12,8 @@
     "psr-4" : {
       "Kolgarnz\\Cacher\\" : "src/"
     }
+  },
+  "require": {
+    "doctrine/cache": "v1.5.1"
   }
 }
